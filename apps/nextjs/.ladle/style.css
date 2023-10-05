@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+  div#ladle-root {
+    flex-direction: row-reverse;
+    @apply min-h-screen dark:bg-background-500 dark:text-white;
+  }
+
+  div[data-reach-dialog-overlay] > div {
+    right: 21px;
+    inset-inline-start: auto;
+  }
+}
+
+body {
+  position: relative;
+}
