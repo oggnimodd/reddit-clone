@@ -2,8 +2,9 @@
 
 import { api } from "utils";
 import { useAuth, SignInButton, SignOutButton } from "@clerk/nextjs";
-import { LoadingWithMessage } from "@acme/ui";
+import { Loading, LoadingWithMessage } from "@acme/ui";
 import { Button } from "@nextui-org/react";
+import Link from "next/link";
 
 const Home = () => {
   const { data: hello } = api.post.hello.useQuery();
@@ -51,9 +52,15 @@ const Home = () => {
       {!isSignedIn && (
         <div>
           <p>You need to login</p>
-          <SignInButton>
-            <Button color="danger">Login</Button>
-          </SignInButton>
+          <div className="flex gap-x-2">
+            <SignInButton>
+              <Button color="danger">Login</Button>
+            </SignInButton>
+
+            <Link href="/sign-in">
+              <Button color="danger">Login with login page</Button>
+            </Link>
+          </div>
         </div>
       )}
 
@@ -95,6 +102,8 @@ const Home = () => {
           </div>
         </div>
       )}
+
+      {isLoading && <Loading />}
     </div>
   );
 };
