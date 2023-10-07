@@ -21,6 +21,9 @@ export const postRouter = createTRPCRouter({
   hello: publicProcedure.query(({ ctx }) => {
     return "Hello world";
   }),
+  world: publicProcedure.input(z.string()).query(({ ctx, input }) => {
+    return `Yahooo ${input}`;
+  }),
   protected: protectedProcedure.query(({ ctx }) => {
     return "congrats";
   }),
