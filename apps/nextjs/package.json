@@ -13,9 +13,9 @@
     "cy:open": "cypress open",
     "cy:e2e": "cypress run --browser chrome",
     "generate-pwa-asset": "bun scripts/pwa-asset-generator.mjs",
-    "ladle:dev": "ladle serve",
+    "ladle:dev": "bun with-env ladle serve",
     "ladle:build": "ladle build",
-    "ladle:preview": "ladle preview"
+    "ladle:preview": "bun with-env ladle preview"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.23.2",
