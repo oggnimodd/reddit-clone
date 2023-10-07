@@ -9,12 +9,7 @@ import superjson from "superjson";
 
 import "../src/styles/globals.css";
 import "./style.css";
-
-const getCookie = (name: string) => {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop()?.split(";").shift();
-};
+import { getCookie } from "./utils";
 
 if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
