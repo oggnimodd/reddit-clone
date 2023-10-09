@@ -39,23 +39,28 @@ export const fontSans = Inter({
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <ClerkProvider {...pageProps}>
-      <Head>
-        <link rel="manifest" href="/manifest.json" />
-        <PwaMeta />
-      </Head>
-      <NextUIProvider>
+    <NextUIProvider>
+      <ClerkProvider {...pageProps}>
+        <Head>
+          <link rel="manifest" href="/manifest.json" />
+          <PwaMeta />
+        </Head>
         <ThemeProvider
           defaultTheme="dark"
           attribute="class"
           enableSystem={false}
         >
+          <style jsx global>{`
+        html {
+          font-family: ${fontSans.style.fontFamily};
+        }
+      `}</style>
           <main className={cn(fontSans.variable, "font-sans")}>
             <Component {...pageProps} />
           </main>
         </ThemeProvider>
-      </NextUIProvider>
-    </ClerkProvider>
+      </ClerkProvider>
+    </NextUIProvider>
   );
 };
 
