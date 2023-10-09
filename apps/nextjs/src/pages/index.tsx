@@ -2,7 +2,6 @@
 
 import { api } from "utils";
 import { useAuth, SignInButton, SignOutButton } from "@clerk/nextjs";
-import { Loading, LoadingWithMessage } from "@acme/ui";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 
@@ -17,7 +16,7 @@ const Home = () => {
     api.post.delete.useMutation();
 
   if (!isLoaded) {
-    return <LoadingWithMessage message="loading haha..." />;
+    return <p>loading...</p>;
   }
 
   // add random post
@@ -103,7 +102,7 @@ const Home = () => {
         </div>
       )}
 
-      {isLoading && <Loading />}
+      {isLoading && <p>loading</p>}
     </div>
   );
 };
