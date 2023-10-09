@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { playgroundTrpc } from "./trpc";
 import { SignInButton, SignOutButton, useAuth } from "@clerk/clerk-react";
 import { Button } from "@nextui-org/react";
-import { Loading } from "@acme/ui";
 
 export const Login: FC = () => {
   const { data } = playgroundTrpc.post.hello.useQuery();
@@ -11,7 +10,7 @@ export const Login: FC = () => {
   const { userId, isLoaded } = useAuth();
 
   if (!isLoaded) {
-    return <Loading />;
+    return <p>loading..</p>;
   }
 
   return (

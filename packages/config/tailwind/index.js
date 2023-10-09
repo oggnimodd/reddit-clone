@@ -1,4 +1,5 @@
 const { nextui } = require("@nextui-org/react");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -18,6 +19,11 @@ module.exports = {
       },
       animation: {
         "rotate-360": "rotate-360 1s linear infinite",
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
+        serif: defaultTheme.fontFamily.serif,
+        mono: defaultTheme.fontFamily.mono,
       },
     },
   },

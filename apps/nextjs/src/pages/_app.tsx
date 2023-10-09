@@ -2,18 +2,39 @@
 import "../styles/globals.css";
 import React from "react";
 import type { AppType } from "next/app";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import Head from "next/head";
 import { PwaMeta } from "components";
 import { ThemeProvider } from "next-themes";
 import { api } from "utils";
 import { ClerkProvider } from "@clerk/nextjs";
 import { NextUIProvider } from "@nextui-org/react";
+import { cn } from "@acme/ui";
 
-const poppins = Poppins({
+export const fontSans = Inter({
+  variable: "--font-sans",
+  adjustFontFallback: true,
+  display: "optional",
+  fallback: [
+    "ui-sans-serif",
+    "system-ui",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    '"Segoe UI"',
+    "Roboto",
+    '"Helvetica Neue"',
+    "Arial",
+    '"Noto Sans"',
+    "sans-serif",
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+    '"Noto Color Emoji"',
+  ],
+  preload: true,
+  style: "normal",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-primary",
+  weight: ["400", "500", "700"],
 });
 
 const MyApp: AppType = ({ Component, pageProps }) => {
@@ -29,7 +50,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           attribute="class"
           enableSystem={false}
         >
-          <main className={`${poppins.variable} font-primary`}>
+          <main className={cn(fontSans.variable, "font-sans")}>
             <Component {...pageProps} />
           </main>
         </ThemeProvider>
