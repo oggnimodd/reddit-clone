@@ -10,8 +10,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id                String      @id @default(auto()) @map("_id") @db.ObjectId
+  email             String      @unique
+  name              String?
+  posts             Post[]
+  createdSubreddits Subreddit[]
+}
+
 model Post {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
-  title   String
-  content String
+  // Auto is used here for autogenerating a valid mongodb id
+  // Map is here is used to map the id to _id
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  content     String     @map("post_content")
+  publised    Boolean    @default(false)
+  author      User?      @relation(fields: [authorId], references: [id])
+  authorId    String?    @db.ObjectId
+  subreddit   Subreddit? @relation(fields: [subredditId], references: [id])
+  subredditId String?    @db.ObjectId
+}
+
+model Subreddit {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  name        String  @unique
+  description String
+  posts       Post[]
+  creatorId   String? @db.ObjectId
+  creator     User?   @relation(fields: [creatorId], references: [id])
 }

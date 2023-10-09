@@ -12,7 +12,9 @@
     "db-generate": "bun with-env prisma generate"
   },
   "dependencies": {
-    "@prisma/client": "latest"
+    "@faker-js/faker": "^8.1.0",
+    "@prisma/client": "latest",
+    "bson": "^6.1.0"
   },
   "devDependencies": {
     "@types/node": "^18.18.3",
