@@ -39,7 +39,7 @@ export const Default = () => {
           Cart
         </SidebarLink>
       </Sidebar>
-      <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-transparent">
+      <div className="relative flex min-h-screen w-full flex-col bg-black-light dark:bg-transparent">
         <HeaderContainer>Hello World</HeaderContainer>
         <div className="mt-16 flex p-2">
           <Button

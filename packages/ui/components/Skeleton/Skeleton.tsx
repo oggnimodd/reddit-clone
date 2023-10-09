@@ -28,7 +28,7 @@ const Skeleton: React.FC<SkeletonProps> = ({
   return (
     <div
       className={clsx(
-        "flex w-full items-center justify-center rounded-xl bg-primary-200/50 dark:bg-background-300",
+        "flex w-full items-center justify-center rounded-xl bg-primary-200/50 dark:bg-black-300",
         circle && "h-full rounded-full",
         className,
         animate && "animate-pulse",

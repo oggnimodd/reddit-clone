@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         <motion.aside
           ref={sidebarRef}
           className={clsx(
-            "fixed left-0 top-0 z-[999] min-h-screen min-w-[250px] flex-col bg-white px-4 shadow-2xl dark:bg-background-400 dark:shadow-xl sm:min-w-[300px]",
+            "fixed left-0 top-0 z-[999] min-h-screen min-w-[250px] flex-col bg-white px-4 shadow-2xl dark:bg-black-400 dark:shadow-xl sm:min-w-[300px]",
           )}
           initial="closed"
           animate="open"
@@ -51,7 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             <Brand />
             <button
               className={
-                "flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary-200/60 dark:hover:bg-background-200"
+                "flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary-200/60 dark:hover:bg-black-200"
               }
               onClick={close}
             >

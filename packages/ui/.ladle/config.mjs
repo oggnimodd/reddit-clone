@@ -1,5 +1,8 @@
 export default {
-  stories: ["components/**/*.stories.{js,jsx,ts,tsx}"],
+  stories: [
+    "components/**/*.stories.{js,jsx,ts,tsx}",
+    "playground/**/*.stories.{js,jsx,ts,tsx}",
+  ],
   addons: {
     a11y: {
       enabled: false,

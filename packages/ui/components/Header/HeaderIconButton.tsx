@@ -20,7 +20,7 @@ const _HeaderIconButton = forwardRef<
     <Element
       ref={ref}
       className={clsx(
-        "flex h-10 w-10 items-center justify-center rounded-full text-2xl text-primary-500 hover:bg-primary-200/60 dark:hover:bg-background-200",
+        "flex h-10 w-10 items-center justify-center rounded-full text-2xl text-primary-500 hover:bg-primary-200/60 dark:hover:bg-black-200",
         className,
       )}
       {...restProps}

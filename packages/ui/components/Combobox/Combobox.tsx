@@ -53,7 +53,7 @@ const Combobox: React.FC<ComboboxProps> = ({
         </div>
         <HeadlessCombobox.Options
           data-cy="combobox-options"
-          className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-background-300 sm:text-sm"
+          className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-black-300 sm:text-sm"
         >
           {/* If there is no results */}
           {filteredItems.length === 0 && query !== "" ? (
