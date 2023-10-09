@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, Avatar, User } from "@nextui-org/react";
+import { Button, Avatar, User, Skeleton } from "@nextui-org/react";
 import { Brand, Container, cn } from "@acme/ui";
 import Link from "next/link";
 import {
@@ -30,7 +30,7 @@ const Navbar: FC = () => {
         <Brand title="Rebbit" />
       </Link>
 
-      {!isLoaded && <p>loading...</p>}
+      {!isLoaded && <Skeleton className="w-10 h-10 rounded-full" />}
 
       {isLoaded && !user && (
         <SignInButton>

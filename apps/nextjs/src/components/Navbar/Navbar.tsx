@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button } from "@nextui-org/react";
+import { Button, Skeleton } from "@nextui-org/react";
 import { Brand, Container } from "@acme/ui";
 import Link from "next/link";
 import { User2 as LoginIcon } from "lucide-react";
@@ -15,7 +15,7 @@ const Navbar: FC = () => {
         <Brand title="Rebbit" />
       </Link>
 
-      {!isLoaded && <p />}
+      {!isLoaded && <Skeleton className="w-10 h-10 rounded-full" />}
 
       {isLoaded && !user && (
         <SignInButton>
